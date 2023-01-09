@@ -40,15 +40,9 @@ public class TitleScreen extends World
         addObject(label, 262,220);
         Label label2 = new Label("Use W, A, S, D to Move", 40);
         addObject(label2,268,228);
-        label.setLocation(352,311);
-        label.setLocation(379,254);
-        label2.setLocation(339,286);
-        label2.setLocation(285,276);
-        label2.setLocation(313,283);
-        label.setLocation(250,238);
-        label.setLocation(392,258);
-        label.setLocation(339,258);
-        label.setLocation(275,228);
-        label2.setLocation(289,287);
+        label2.setLocation(179,234);
+
+        label2.setLocation(313,239);
+        label.setLocation(300,283);
     }
 }
