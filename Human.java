@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Human extends Actor
 {
     //Creating the sound a human makes when it eats, and also creating an array of all the sprites
-    GreenfootSound humanSound = new GreenfootSound("[YT2mp3.info] - Yum - Sound Effect (320kbps).mp3");
+    GreenfootSound humanYum = new GreenfootSound("[YT2mp3.info] - Yum - Sound Effect (320kbps).mp3");
+    GreenfootSound humanEw = new GreenfootSound("kurtis conner’s ‘ew’ origin (320kbps).mp3");
     GreenfootImage [] idleRight = new GreenfootImage[8];
     GreenfootImage [] idleLeft = new GreenfootImage[8];
     
@@ -42,7 +43,7 @@ public class Human extends Actor
             return;
         }
         animationTimer.mark();
-        if(facing.equals("d")){
+        if(facing.equals("right")){
             setImage(idleRight[index]);
             index = (index +1) % idleRight.length;
         }
@@ -58,13 +59,13 @@ public class Human extends Actor
      */
     public void act()
     {
-        if(Greenfoot.isKeyDown("a")){
-            move(-1);
-            facing = "a";
+        if(Greenfoot.isKeyDown("left")){
+            move(-3);
+            facing = "left";
         }
-        else if(Greenfoot.isKeyDown("d")){
-            move(1);
-            facing = "d";
+        else if(Greenfoot.isKeyDown("right")){
+            move(3);
+            facing = "right";
         }
         
         eat();
@@ -76,7 +77,15 @@ public class Human extends Actor
             MyWorld w = (MyWorld) getWorld();
             w.createPizza();
             w.increase();
-            humanSound.play();
+            humanYum.play();
+        }
+        else if(isTouching(Pineapple.class)){
+            removeTouching(Pineapple.class);
+            MyWorld w = (MyWorld) getWorld();
+            w.createPineapple();
+            w.increase();
+            humanEw.play();
+            w.gameOver();
         }
     }
 }
