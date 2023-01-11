@@ -75,15 +75,19 @@ public class Human extends Actor
         if(isTouching(Pizza.class)){
             removeTouching(Pizza.class);
             MyWorld w = (MyWorld) getWorld();
-            w.createPizza();
+            int x = Greenfoot.getRandomNumber(100);
+            if(x%2 == 0){
+                w.createPineapple();
+            }
+            else{
+                w.createPizza();
+            }
             w.increase();
             humanYum.play();
         }
         else if(isTouching(Pineapple.class)){
             removeTouching(Pineapple.class);
             MyWorld w = (MyWorld) getWorld();
-            w.createPineapple();
-            w.increase();
             humanEw.play();
             w.gameOver();
         }

@@ -10,8 +10,8 @@ public class MyWorld extends World
 {
     public static int s;
     Label score;
-    int level = 1;
     GreenfootSound pizza = new GreenfootSound("[YT2mp3.info] - Pizza (320kbps).mp3");
+    
     /**
      * Constructor for objects of class MyWorld.
      * .
@@ -29,9 +29,12 @@ public class MyWorld extends World
         score = new Label(0,100);
         addObject(score, 50,50);
         pizza.play();
+        create();
         
+    }
+    public void create(){
         int x = Greenfoot.getRandomNumber(100);
-        if(x%3 == 0){
+        if(x%2 == 0){
             createPineapple();
         }
         else{
@@ -41,7 +44,6 @@ public class MyWorld extends World
     public void increase(){
         s++;
         score.setValue(s);
-        level++;
     
     }
     public void gameOver(){
@@ -50,14 +52,12 @@ public class MyWorld extends World
     }
     public void createPizza(){
         Pizza p = new Pizza();
-        p.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y= 0;
         addObject(p,x,y);
     }
     public void createPineapple(){
         Pineapple p = new Pineapple();
-        p.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y= 0;
         addObject(p,x,y);

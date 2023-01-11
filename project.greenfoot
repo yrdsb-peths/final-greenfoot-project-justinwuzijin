@@ -1,6 +1,7 @@
 #Greenfoot project file
 class.Human.image=man.png
-class.Pineapple.image=2867-removebg-preview.png
+class.MyWorld.image=2022-02-01.jpg
+class.Pineapple.image=apple1.png
 class.Pizza.image=pizza_cheese.png
 class.TitleScreen.image=360_F_275924184_GP4ACV80EK8NokxlFaUB2qykpXKrroqx.jpg
 dependency1.from=MyWorld
@@ -45,7 +46,7 @@ dependency9.type=UsesDependency
 editor.fx.0.height=728
 editor.fx.0.width=800
 editor.fx.0.x=72
-editor.fx.0.y=130
+editor.fx.0.y=129
 height=625
 package.numDependencies=13
 package.numTargets=7
@@ -62,7 +63,7 @@ readme.name=@README
 readme.width=48
 readme.x=10
 readme.y=10
-simulation.speed=50
+simulation.speed=53
 target1.height=70
 target1.name=Pizza
 target1.showInterface=false

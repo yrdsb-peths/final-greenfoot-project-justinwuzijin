@@ -19,11 +19,12 @@ public class Pineapple extends Actor
         setLocation(getX(), getY()+2);
         
         MyWorld w = (MyWorld) getWorld();
-        if(getY() >= w.getHeight()){
-            w.removeObject(this);
-        }
         if(isTouching(Human.class)){
             w.gameOver();
+        }
+        if(getY() >= w.getHeight()){
+            w.create();
+            w.removeObject(this);
         }
     }
     public void setSpeed(int spd){
