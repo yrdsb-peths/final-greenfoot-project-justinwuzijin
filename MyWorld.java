@@ -23,7 +23,7 @@ public class MyWorld extends World
         
         //Creating human object
         Human h = new Human();
-        addObject(h, 250, 200);
+        addObject(h, 250, 350);
         
         //Creating a label
         score = new Label(0,100);
