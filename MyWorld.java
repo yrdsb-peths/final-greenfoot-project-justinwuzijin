@@ -10,6 +10,9 @@ public class MyWorld extends World
 {
     public static int s;
     Label score;
+    public static SimpleTimer myTimer = new SimpleTimer();
+    public static Counter myTimeCount = new Counter();
+    
     //GreenfootSound pizza = new GreenfootSound("[YT2mp3.info] - Pizza (320kbps).mp3");
     
     /**
@@ -24,13 +27,24 @@ public class MyWorld extends World
         //Creating human object
         Human h = new Human();
         addObject(h, 250, 350);
+        myTimer.mark();
         
-        //Creating a label
+        //Creating a score label
         score = new Label(0,100);
+    
+        //Creating timer counter
+        addObject(myTimeCount, 125, 50);
+        myTimer.mark();
+        
         addObject(score, 50,50);
         //pizza.play();
         create();
         
+    }
+    
+    //Start timer starting from 60 seconds
+    public void act(){
+        myTimeCount.setValue(60 - (myTimer.millisElapsed() / 1000));
     }
     public void create(){
         int x = Greenfoot.getRandomNumber(100);
@@ -47,8 +61,18 @@ public class MyWorld extends World
     
     }
     public void gameOver(){
-        Label gameOverLabel = new Label("You Lose", 100);
-        addObject(gameOverLabel, 300, 200);
+        myTimeCount.setValue(60);
+        Label gameOverLabel = new Label("Game Over", 100);
+        Label gameOverLabel2;
+        //checks grammar of amount of pizzas ate
+        if(s != 1){
+            gameOverLabel2 = new Label("You ate " + s + " pizzas!", 50);
+        }
+        else{
+            gameOverLabel2 = new Label("You ate " + s + " pizza!", 50);
+        }
+        addObject(gameOverLabel, 300, 150);
+        addObject(gameOverLabel2, 300, 250);
     }
     public void createPizza(){
         Pizza p = new Pizza();

@@ -59,6 +59,7 @@ public class Human extends Actor
      */
     public void act()
     {
+        
         if(Greenfoot.isKeyDown("left")){
             move(-3);
             facing = "left";
