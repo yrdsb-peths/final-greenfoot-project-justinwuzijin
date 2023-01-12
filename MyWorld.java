@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     public static int s;
     Label score;
-    GreenfootSound pizza = new GreenfootSound("[YT2mp3.info] - Pizza (320kbps).mp3");
+    //GreenfootSound pizza = new GreenfootSound("[YT2mp3.info] - Pizza (320kbps).mp3");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -18,7 +18,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        //Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
         //Creating human object
@@ -28,7 +28,7 @@ public class MyWorld extends World
         //Creating a label
         score = new Label(0,100);
         addObject(score, 50,50);
-        pizza.play();
+        //pizza.play();
         create();
         
     }
