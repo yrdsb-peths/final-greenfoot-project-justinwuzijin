@@ -21,6 +21,7 @@ public class Pizza extends Actor
         MyWorld w = (MyWorld) getWorld();
         if(getY() >= w.getHeight()){
             w.gameOver();
+            w.over = true;
             w.removeObject(this);
         }
     }

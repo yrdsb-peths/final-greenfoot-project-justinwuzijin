@@ -21,6 +21,7 @@ public class Pineapple extends Actor
         MyWorld w = (MyWorld) getWorld();
         if(isTouching(Human.class)){
             w.gameOver();
+            w.over = true;
         }
         if(getY() >= w.getHeight()){
             w.create();

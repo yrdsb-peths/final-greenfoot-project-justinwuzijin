@@ -13,7 +13,6 @@ public class MyWorld extends World
     public static SimpleTimer myTimer = new SimpleTimer();
     public static Counter myTimeCount = new Counter();
     
-    //GreenfootSound pizza = new GreenfootSound("[YT2mp3.info] - Pizza (320kbps).mp3");
     
     /**
      * Constructor for objects of class MyWorld.
@@ -33,19 +32,26 @@ public class MyWorld extends World
         score = new Label(0,100);
     
         //Creating timer counter
-        addObject(myTimeCount, 125, 50);
+        addObject(myTimeCount, 200, 50);
         myTimer.mark();
         
         addObject(score, 50,50);
-        //pizza.play();
         create();
         
     }
     
+    boolean over = false;
     //Start timer starting from 60 seconds
     public void act(){
-        myTimeCount.setValue(60 - (myTimer.millisElapsed() / 1000));
+        if(!over){
+            myTimeCount.setValue(60 - (myTimer.millisElapsed() / 1000));
+        }
+        if(myTimeCount.getValue() == 0){
+            gameOver();
+            over = true;
+        }
     }
+    
     public void create(){
         int x = Greenfoot.getRandomNumber(100);
         if(x%2 == 0){
@@ -61,10 +67,10 @@ public class MyWorld extends World
     
     }
     public void gameOver(){
-        myTimeCount.setValue(60);
+        myTimeCount.setValue(0);
         Label gameOverLabel = new Label("Game Over", 100);
         Label gameOverLabel2;
-        //checks grammar of amount of pizzas ate
+        //changes sentence structure of sentence depending on # of pizza
         if(s != 1){
             gameOverLabel2 = new Label("You ate " + s + " pizzas!", 50);
         }

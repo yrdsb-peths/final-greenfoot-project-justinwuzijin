@@ -91,6 +91,7 @@ public class Human extends Actor
             MyWorld w = (MyWorld) getWorld();
             humanEw.play();
             w.gameOver();
+            w.over = true;
         }
     }
 }
