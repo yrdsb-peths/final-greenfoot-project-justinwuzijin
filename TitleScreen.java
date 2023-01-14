@@ -18,7 +18,7 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         addObject(titleLabel, 250, 100);
-        titleLabel.setLocation(300,150);
+        titleLabel.setLocation(300,125);
 
         prepare();
     }
@@ -47,7 +47,10 @@ public class TitleScreen extends World
         Label label2 = new Label("Press <i> to view Instructions", 25);
         addObject(label2,268,228);
 
-        label.setLocation(304,244);
-        label2.setLocation(301,298);
+        Human human = new Human();
+        addObject(human,299,205);
+        label2.setLocation(304,56);
+        human.setLocation(295,215);
+        label.setLocation(300,286);
     }
 }

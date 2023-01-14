@@ -17,8 +17,7 @@ public class Instructions extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        addObject(titleLabel, 250, 100);
-        titleLabel.setLocation(300,50);
+        addObject(titleLabel, 300, 100);
         prepare();
     }
     public void act(){
@@ -28,6 +27,7 @@ public class Instructions extends World
             Greenfoot.setWorld(t);
         }
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -35,15 +35,18 @@ public class Instructions extends World
     private void prepare()
     {
         Label label = new Label("Press <b> to go back", 25);
-        addObject(label, 262,220);
+        addObject(label, 268,228);
         Label label2 = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label2,268,228);
-        Label label3 = new Label("Rules: Eat Pizza. Avoid Apples.", 40);
+        Label label3 = new Label("Eat Pizza. Avoid Apples.", 40);
         addObject(label3,268,228);
 
-        label.setLocation(300,283);
-        label2.setLocation(291,233);
-        label3.setLocation(300,183);
+        Human human = new Human();
+        addObject(human,308,222);
+        label.setLocation(290,58);
+        human.setLocation(290,235);
+        label2.setLocation(299,316);
+        label3.setLocation(300,158);
     }
     
 }

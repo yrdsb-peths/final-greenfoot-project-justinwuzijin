@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public static int s;
+    int level = 2;
     Label score;
     public static SimpleTimer myTimer = new SimpleTimer();
     public static Counter myTimeCount = new Counter();
@@ -64,6 +65,9 @@ public class MyWorld extends World
     public void increase(){
         s++;
         score.setValue(s);
+        if(s % 5 == 0){
+            level++;
+        }
     
     }
     public void gameOver(){
@@ -82,12 +86,14 @@ public class MyWorld extends World
     }
     public void createPizza(){
         Pizza p = new Pizza();
+        p.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y= 0;
         addObject(p,x,y);
     }
     public void createApple(){
         Apple a = new Apple();
+        a.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y= 0;
         addObject(a,x,y);
