@@ -10,7 +10,7 @@ public class Human extends Actor
 {
     //Creating the sound a human makes when it eats, and also creating an array of all the sprites
     GreenfootSound humanYum = new GreenfootSound("[YT2mp3.info] - Yum - Sound Effect (320kbps).mp3");
-    GreenfootSound humanEw = new GreenfootSound("kurtis conner’s ‘ew’ origin (320kbps).mp3");
+    GreenfootSound humanEw = new GreenfootSound("Disgusted - Sound Effect.mp3");
     GreenfootImage [] idleRight = new GreenfootImage[8];
     GreenfootImage [] idleLeft = new GreenfootImage[8];
     
@@ -78,7 +78,7 @@ public class Human extends Actor
             MyWorld w = (MyWorld) getWorld();
             int x = Greenfoot.getRandomNumber(100);
             if(x%2 == 0){
-                w.createPineapple();
+                w.createApple();
             }
             else{
                 w.createPizza();
@@ -86,8 +86,8 @@ public class Human extends Actor
             w.increase();
             humanYum.play();
         }
-        else if(isTouching(Pineapple.class)){
-            removeTouching(Pineapple.class);
+        else if(isTouching(Apple.class)){
+            removeTouching(Apple.class);
             MyWorld w = (MyWorld) getWorld();
             humanEw.play();
             w.gameOver();

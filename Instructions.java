@@ -38,7 +38,7 @@ public class Instructions extends World
         addObject(label, 262,220);
         Label label2 = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label2,268,228);
-        Label label3 = new Label("Rules: Eat Pizza. Avoid Apples", 40);
+        Label label3 = new Label("Rules: Eat Pizza. Avoid Apples.", 40);
         addObject(label3,268,228);
 
         label.setLocation(300,283);

@@ -55,7 +55,7 @@ public class MyWorld extends World
     public void create(){
         int x = Greenfoot.getRandomNumber(100);
         if(x%2 == 0){
-            createPineapple();
+            createApple();
         }
         else{
             createPizza();
@@ -86,11 +86,11 @@ public class MyWorld extends World
         int y= 0;
         addObject(p,x,y);
     }
-    public void createPineapple(){
-        Pineapple p = new Pineapple();
+    public void createApple(){
+        Apple a = new Apple();
         int x = Greenfoot.getRandomNumber(600);
         int y= 0;
-        addObject(p,x,y);
+        addObject(a,x,y);
     }
     
 }
