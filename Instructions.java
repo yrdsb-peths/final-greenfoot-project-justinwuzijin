@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Instructions extends World
 {
-    Label titleLabel = new Label("Instructions", 70);
     /**
      * Constructor for objects of class Instructions.
      * 
@@ -17,7 +16,6 @@ public class Instructions extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        addObject(titleLabel, 300, 100);
         prepare();
     }
     public void act(){
@@ -38,7 +36,7 @@ public class Instructions extends World
         addObject(label, 268,228);
         Label label2 = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label2,268,228);
-        Label label3 = new Label("Eat Pizza. Avoid Apples.", 40);
+        Label label3 = new Label("Eat ALL Pizza. Avoid ALL Apples.", 40);
         addObject(label3,268,228);
 
         Human human = new Human();

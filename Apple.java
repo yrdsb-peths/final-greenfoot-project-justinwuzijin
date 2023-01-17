@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Pinapple class
+ * Pinapple that humans are not supposed to eat
  * 
  * @author Justin Wu
  * @version January 2023

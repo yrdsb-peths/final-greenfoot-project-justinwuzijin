@@ -77,14 +77,16 @@ public class Human extends Actor
             removeTouching(Pizza.class);
             MyWorld w = (MyWorld) getWorld();
             int x = Greenfoot.getRandomNumber(100);
-            if(x%2 == 0){
+            if (!w.over){
+                if(x%2 == 0 ){
                 w.createApple();
+                }
+                else{
+                    w.createPizza();
+                    w.increase();
+                    humanYum.play();
+                }
             }
-            else{
-                w.createPizza();
-            }
-            w.increase();
-            humanYum.play();
         }
         else if(isTouching(Apple.class)){
             removeTouching(Apple.class);

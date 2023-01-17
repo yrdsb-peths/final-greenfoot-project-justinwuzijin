@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     Label titleLabel = new Label("Falling Pizza", 70);
+    static int topScore = 0;
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -46,7 +47,7 @@ public class TitleScreen extends World
         addObject(label, 262,220);
         Label label2 = new Label("Press <i> to view Instructions", 25);
         addObject(label2,268,228);
-
+        
         Human human = new Human();
         addObject(human,299,205);
         label2.setLocation(304,56);
